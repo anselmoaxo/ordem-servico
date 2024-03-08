@@ -1,3 +1,14 @@
 from django.db import models
 
-# Create your models here.
+
+class Cargo(models.Model):
+    nome = models.CharField(max_length=255)
+    descricao = models.TextField()
+
+class Funcionario(models.Model):
+    nome = models.CharField(max_length=255)
+    cpf = models.CharField(max_length=14)
+    email = models.EmailField()
+    telefone = models.CharField(max_length=15)
+    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
+
