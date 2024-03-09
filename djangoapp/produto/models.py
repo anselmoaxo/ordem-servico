@@ -1,5 +1,5 @@
 from django.db import models
-from categoria import Categoria
+from categoria.models import Categoria
 
 
 class Produto(models.Model):
@@ -7,4 +7,5 @@ class Produto(models.Model):
     descricao = models.TextField()
     valor = models.DecimalField(max_digits=10, decimal_places=2)
     quantidade = models.PositiveIntegerField()
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE )
+    

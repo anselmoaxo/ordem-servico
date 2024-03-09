@@ -1,7 +1,7 @@
 from django.db import models
-from cliente import Cliente
-from funcionario import Funcionario
-from produto import Produto
+from cliente.models import Cliente
+from funcionario.models import Funcionario
+from produto.models import Produto
 
 class OrdemServico(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
